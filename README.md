@@ -20,9 +20,9 @@ darkdb.addRow("MyRowName","MyRowValue","mydatabase.db")
 darkdb.removeRow("MyRowName","mydatabase.db")
 # read all lines as string
 print(darkdb.dbAsString("mydatabase.db"))
+```
 If you want to delete a database simply just delete the database file.
 Its not hard.
-```
 
 # Pros and Cons
 
