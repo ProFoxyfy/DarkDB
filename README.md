@@ -11,16 +11,18 @@ Well, Python of course. Even though its slow, its enough for a custom client-sid
 Its simple.
 You also need to put the DarkDB source files in your source directory, 
 
-    import darkdb
-    darkdb.makeDatabase("mydatabase.db")
-    # add some example
-    darkdb.addRow("MyRowName","MyRowValue","mydatabase.db")
-    # remove that example
-    darkdb.removeRow("MyRowName","mydatabase.db")
-    # read all lines as string
-    print(darkdb.dbAsString("mydatabase.db"))
+```python
+import darkdb
+darkdb.makeDatabase("mydatabase.db")
+# add some example
+darkdb.addRow("MyRowName","MyRowValue","mydatabase.db")
+# remove that example
+darkdb.removeRow("MyRowName","mydatabase.db")
+# read all lines as string
+print(darkdb.dbAsString("mydatabase.db"))
 If you want to delete a database simply just delete the database file.
 Its not hard.
+```
 
 # Pros and Cons
 
