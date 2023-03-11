@@ -2,6 +2,7 @@ You are viewing the experimental branch, this is the branch where updates go bef
 
 # Recent Changes in 1.1
 added 3 new functions
+
 fixed bug where reading as a table could cause a row with None to appear
 
 
