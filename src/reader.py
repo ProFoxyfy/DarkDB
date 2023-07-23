@@ -31,6 +31,9 @@ def saveTable(table, filename, overwrite):
     content = ""
 
     for row in table:
+        if row == None or row.Value == None or row.Name == None:
+            continue
+
         content += row.Name + ":" + row.Value + ";"
         content += "\n"
 
