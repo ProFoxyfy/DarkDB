@@ -12,14 +12,14 @@ try:
   print("Test 2: Success")
 except:
   print("Test 2: Fail")
-  assert false
+  assert False
 
 try:
   darkdb.changeRow("newrow","NiceOne","unittest", True)
   print("Test 2: Success")
 except:
   print("Test 2: Fail")
-  assert false
+  assert False
 
 try:
   assert darkdb.dbAsString("unittest")
