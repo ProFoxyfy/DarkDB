@@ -1,5 +1,6 @@
+import sys
 import reader
-
+import requests
 
 # makes a usable data base file
 def makeDatabase(filename):
@@ -72,3 +73,30 @@ def dbAsString(filename):
 # see reader.py
 def dbAsTableOfRows(filename):
     return reader.readDbAsTable(filename)
+
+args = sys.argv
+if args[1] == "--update":
+    try:
+        urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%"
+        # Abusing the way the python interpreter works, to get a new update from GitHub
+        if len(args) < 3:
+            print("3rd argument (branch) required. Exiting!")
+            exit(1)
+        if input("Please close any processes that use DarkDB. Type [Y] to continue if your done: ").lower() != "y":
+            exit(0)
+
+        db = open("darkdb.py", "w")
+        reader = open("reader.py", "w")
+        print("Downloading 'darkdb.py'...")
+        newDb = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "darkdb.py"))
+        print("Downloading 'reader.py'...")
+        newReader = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "reader.py"))
+
+        db.write(newDb)
+        reader.write(newReader)
+        db.close()
+        reader.close()
+        print("The operation completed successfully.")
+    except Exception as err:
+        print("The operation did not complete.")
+        print(str(err))
