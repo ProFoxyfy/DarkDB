@@ -85,16 +85,15 @@ if args[1] == "--update":
         if input("Please close any processes that use DarkDB. Type [Y] to continue if your done: ").lower() != "y":
             exit(0)
 
-        db = open("darkdb.py", "w")
-        reader = open("reader.py", "w")
+        db = open("darkdb.py", "wb")
+        reader = open("reader.py", "wb")
         print("Downloading 'darkdb.py'...")
         newDb = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "darkdb.py"))
-        print(str(newDb))
         print("Downloading 'reader.py'...")
         newReader = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "reader.py"))
-        print(str(newReader))
-        db.write(newDb.text)
-        reader.write(newReader.text)
+
+        db.write(newDb)
+        reader.write(newReader)
         db.close()
         reader.close()
         print("The operation completed successfully.")
