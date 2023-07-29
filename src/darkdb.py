@@ -92,8 +92,8 @@ if args[1] == "--update":
         print("Downloading 'reader.py'...")
         newReader = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "reader.py"))
 
-        db.write(newDb)
-        reader.write(newReader)
+        db.write(newDb.text)
+        reader.write(newReader.text)
         db.close()
         reader.close()
         print("The operation completed successfully.")
