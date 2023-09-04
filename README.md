@@ -1,3 +1,6 @@
+If you've installed through the DarkDB Installer, you have to use "import darkdb.darkdb"
+
+
 # Why?
 
 Because why not! I originally created this project for future things.
