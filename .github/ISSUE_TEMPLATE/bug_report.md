@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a bug report relating to the functionality of DarkDB
+about: Create a bug report relating to the functionality of DarkDB's Installer
 title: "[BUG] - (type a title for your issue here)"
 labels: bug
 assignees: ProFoxyfy
