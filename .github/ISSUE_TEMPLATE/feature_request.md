@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Help improve DarkDB by adding features.
+about: Help improve DarkDB's Installer by adding features.
 title: "[FEATURE REQUEST] - (type a title for your feature request here)"
 labels: enhancement
 assignees: ProFoxyfy
