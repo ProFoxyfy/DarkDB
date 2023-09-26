@@ -1,5 +1,3 @@
-If you've installed through the DarkDB Installer, you have to use "import darkdb.darkdb"
-
 
 # Why?
 
