@@ -34,7 +34,6 @@ def install(branch):
     path = askdirectory()
     print(get_lang_key("folder_create"))
     darkdbPath = path
-    os.makedirs(darkdbPath)
     download_file(darkdbPath + "\darkdb.py",get_file_from_branch("darkdb.py",branch))
     download_file(darkdbPath + "\\reader.py", get_file_from_branch("reader.py", branch))
     print(get_lang_key("install_end"))
