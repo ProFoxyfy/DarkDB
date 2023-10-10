@@ -1,6 +1,6 @@
 You are viewing the experimental branch, this is the branch where updates go before battle-tested. Things may not be stable.
 
-If you've installed through the DarkDB Installer, you have to use "import darkdb.darkdb"
+If you've installed through the DarkDB Installer, you have to use "import darkdb"
 # Recent Changes in 1.1
 added 3 new functions
 
