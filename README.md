@@ -30,7 +30,7 @@ darkdb.removeRow("MyRowName","mydatabase.db")
 # read all lines as string
 print(darkdb.dbAsString("mydatabase.db"))
 ```
-If you want to delete a database simply just delete the database file.
+If you want to delete a database simply just rm -rf the whole db! (dont do this if your boss says this, make sure to get this through your employees first so you dont get the gitlab incident 2.0)
 Its not hard.
 
 # Pros and Cons
