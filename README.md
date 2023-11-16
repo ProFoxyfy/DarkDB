@@ -22,7 +22,7 @@ darkdb.removeRow("MyRowName","mydatabase.db")
 # read all lines as string
 print(darkdb.dbAsString("mydatabase.db"))
 ```
-If you want to delete a database simply just delete the database file.
+If you want to delete a database simply just rm -rf that file.
 Its not hard.
 
 # Pros and Cons
