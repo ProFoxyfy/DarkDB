@@ -1,3 +1,10 @@
+If you've installed through the DarkDB Installer, the import line is the same.
+# Recent Changes in 1.1
+- Added 3 new functions
+- Fixed bug where reading as a table could cause a row with None to appear
+- Added cachebust to updater (fixes certain issues)
+
+=======
 
 # Why?
 
@@ -22,6 +29,7 @@ darkdb.removeRow("MyRowName","mydatabase.db")
 # read all lines as string
 print(darkdb.dbAsString("mydatabase.db"))
 ```
+
 If you want to delete a database simply just rm -rf the whole thing!
 Its not hard.
 
