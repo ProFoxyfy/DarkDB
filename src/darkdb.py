@@ -76,31 +76,32 @@ def dbAsTableOfRows(filename):
 
 if __name__ == "__main__":
     args = sys.argv
-if len(args) < 2:
-    return
-
-if args[1] == "--update":
-    try:
-        urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%?cachebust=true"
-        # Abusing the way the python interpreter works, to get a new update from GitHub
-        if len(args) < 3:
-            print("3rd argument (branch) required. Exiting!")
-            exit(1)
-        if input("Please close any processes that use DarkDB. Type [Y] to continue if your done: ").lower() != "y":
-            exit(0)
-
-        db = open("darkdb.py", "wb")
-        reader = open("reader.py", "wb")
-        print("Downloading 'darkdb.py'...")
-        newDb = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "darkdb.py"))
-        print("Downloading 'reader.py'...")
-        newReader = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "reader.py"))
-
-        db.write(newDb.content)
-        reader.write(newReader.content)
-        db.close()
-        reader.close()
-        print("The operation completed successfully.")
-    except Exception as err:
-        print("The operation did not complete.")
-        print(str(err))
+    if len(args) < 2:
+        print("No arguments provided")
+        exit(0)
+    
+    if args[1] == "--update":
+        try:
+            urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%?cachebust=true"
+            # Abusing the way the python interpreter works, to get a new update from GitHub
+            if len(args) < 3:
+                print("3rd argument (branch) required. Exiting!")
+                exit(1)
+            if input("Please close any processes that use DarkDB. Type [Y] to continue if your done: ").lower() != "y":
+                exit(0)
+            
+            db = open("darkdb.py", "wb")
+            reader = open("reader.py", "wb")
+            print("Downloading 'darkdb.py'...")
+            newDb = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "darkdb.py"))
+            print("Downloading 'reader.py'...")
+            newReader = requests.get(urlPart.replace('%TARGETBRANCH%', args[2]).replace("%TARGETFILE%", "reader.py"))
+            
+            db.write(newDb.content)
+            reader.write(newReader.content)
+            db.close()
+            reader.close()
+            print("The operation completed successfully.")
+        except Exception as err:
+            print("The operation did not complete.")
+            print(str(err))
