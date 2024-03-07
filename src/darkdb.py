@@ -74,7 +74,11 @@ def dbAsString(filename):
 def dbAsTableOfRows(filename):
     return reader.readDbAsTable(filename)
 
-args = sys.argv
+if __name__ == "__main__":
+    args = sys.argv
+if len(args) < 2:
+    return
+
 if args[1] == "--update":
     try:
         urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%?cachebust=true"
