@@ -77,7 +77,7 @@ def dbAsTableOfRows(filename):
 args = sys.argv
 if args[1] == "--update":
     try:
-        urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%"
+        urlPart = "https://raw.githubusercontent.com/ProFoxyfy/DarkDB/%TARGETBRANCH%/src/%TARGETFILE%?cachebust=true"
         # Abusing the way the python interpreter works, to get a new update from GitHub
         if len(args) < 3:
             print("3rd argument (branch) required. Exiting!")
